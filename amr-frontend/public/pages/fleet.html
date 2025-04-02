@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+ <title>AMR - Fleet</title>
+ <link rel="shortcut icon" href="/images/favicon.ico" />
+ <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+ <link href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+ <link href="/css/main.css" rel="stylesheet" />
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+ <div class="container">
+  <a class="navbar-brand" href="/index.html">
+   <img alt="company-logo" src="/images/AMRLogo.png" />
+  </a>
+  <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navMenu" type="button">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navMenu">
+   <ul class="navbar-nav mx-auto text-center">
+    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/fleet.html">Fleet</a></li>
+    <li class="nav-item"><a class="nav-link" href="/reservations.html">Reservations</a></li>
+    <li class="nav-item"><a class="nav-link" href="/rates.html">Rates</a></li>
+    <li class="nav-item"><a class="nav-link" href="/team.html">Team</a></li>
+    <li class="nav-item"><a class="nav-link" href="/aboutus.html">About Us</a></li>
+    <li class="nav-item"><a class="nav-link" href="/contactus.html">Contact Us</a></li>
+   </ul>
+  </div>
+  <div class="navbar-nav temperature-container">
+   <p class="nav-item" id="displayResult"></p>
+   <span>° F <i class="fas fa-pen" id="openDialog"></i></span>
+   <p class="temp-city" id="displayCity"></p>
+   <div id="dialog"><input id="userInput" placeholder="Enter your Zip Code" type="text" /></div>
+  </div>
+ </div>
+</nav>
+
+<section class="py-5 fleet first-section" id="special">
+ <div class="container">
+  <div class="title text-center py-5">
+   <h2 class="position-relative d-inline-block">Fleet</h2>
+  </div>
+  <div class="special-list row g-0">
+   <!-- Escalade -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="escalade">
+    <div class="special-img" id="escalade-img-container">
+     <img src="/images/escalade_SUV.jpg" alt="Cadillac Escalade" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Cadillac Escalade</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Ford -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="ford">
+    <div class="special-img" id="ford-img-container">
+     <img src="/images/ford_SUV.jpg" alt="Ford SUV" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Ford Expedition</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Hyundai -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="hyundai">
+    <div class="special-img" id="hyundai-img-container">
+     <img src="/images/hyundai_SUV.jpg" alt="Hyundai SUV" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Hyundai Palisade</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Hummer -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="hummer">
+    <div class="special-img" id="hummer-img-container">
+     <img src="/images/hummer_h2.jpg" alt="Hummer H2" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Hummer H2</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Mercedes -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="mercedes">
+    <div class="special-img" id="mercedes-img-container">
+     <img src="/images/mercedes_benz.jpg" alt="Mercedes Benz SUV" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Mercedes G-Wagon</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Jeep -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="jeep">
+    <div class="special-img" id="jeep-img-container">
+     <img src="/images/jeep_wrangler.jpg" alt="Jeep Wrangler" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Jeep Wrangler</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Porsche -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="porsche">
+    <div class="special-img" id="porsche-img-container">
+     <img src="/images/porsche_cayenne.jpg" alt="Porsche Cayenne" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Porsche Cayenne</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+
+   <!-- Lexus -->
+   <div class="col-md-6 col-lg-4 col-xl-3 p-2" id="lexus">
+    <div class="special-img" id="lexus-img-container">
+     <img src="/images/lexus_gx550.jpg" alt="Lexus GX550" class="w-100 fleet-img" />
+    </div>
+    <div class="text-center">
+     <div class="rating mt-3">
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i><i class="fas fa-star text-primary"></i>
+      <i class="fas fa-star text-primary"></i>
+     </div>
+     <p class="text-capitalize my-1">Lexus GX550</p>
+     <button class="btn btn-primary">Reserve Now</button>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer class="bg-dark py-5">
+ <!-- Keep your existing footer here -->
+</footer>
+
+<script defer src="/script/imageRollover.js"></script>
+<script defer src="/script/scaleImage.js"></script>
+<script defer src="/script/vehicleDataLoad.js"></script>
+</body>
+</html>
+

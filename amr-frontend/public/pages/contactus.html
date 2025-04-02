@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <title>AMR - Contact</title>
+ <link rel="shortcut icon" href="/images/favicon.ico" />
+ <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" referrerpolicy="no-referrer" rel="stylesheet"/>
+ <link href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
+ <link href="/css/main.css" rel="stylesheet"/>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body class="contact-form">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+ <div class="container">
+  <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/index.html">
+     <span class="text-uppercase fw-lighter ms-2">
+      <img alt="company-logo" src="/images/AMRLogo.png"/>
+     </span>
+  </a>
+  <button class="navbar-toggler border-0" data-bs-target="#navMenu" data-bs-toggle="collapse" type="button">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+   <ul class="navbar-nav mx-auto text-center">
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/index.html">home</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/fleet.html">fleet</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/reservations.html">reservations</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/rates.html">rates</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/team.html">team</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/aboutus.html">about us</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/contactus.html">contact us</a></li>
+   </ul>
+  </div>
+
+  <div class="order-lg-1 navbar-nav temperature-container">
+   <p class="nav-item temperature-value" id="displayResult"></p>
+   <span>° F <i class="nav-item fas fa-solid fa-pen edit-icon" id="openDialog"></i></span>
+   <p class="temperature-value temp-city" id="displayCity"></p>
+  </div>
+  <div id="dialog">
+   <input id="userInput" placeholder="Enter your Zip Code" type="text"/>
+  </div>
+ </div>
+</nav>
+
+<!-- Contact Form -->
+<div class="container" style="margin-top: 50px!important;">
+ <div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+   <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+    <div class="card">
+     <h2 class="text-center mb-4 title legend-font-change">Say Hello!</h2>
+     <label for="text-size-range">Change Text Size</label>
+     <div class="col justify-content-between text-left">
+      <span class="text-size-small">A</span>
+      <input id="text-size-range" max="50" min="20" name="text-size-range" type="range" value="30"/>
+      <span class="text-size-large">A</span>
+     </div>
+
+     <form class="form-card">
+      <fieldset>
+       <legend class="legend-font-change">Personal Information</legend>
+       <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+         <input id="fname" name="fname" placeholder="First name" type="text"/>
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+         <input id="lname" name="lname" placeholder="Last name" type="text"/>
+        </div>
+       </div>
+       <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+         <input id="email" name="email" placeholder="Email" type="email"/>
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+         <input id="mob" name="mob" placeholder="Phone number" type="tel"/>
+        </div>
+       </div>
+      </fieldset>
+
+
+      <fieldset>
+       <legend class="legend-font-change">Message</legend>
+       <div class="row justify-content-between text-left">
+        <div class="form-group col-12 flex-column d-flex">
+         <textarea class="form-control" id="message-textbox" rows="3"></textarea>
+        </div>
+       </div>
+      </fieldset>
+
+      <div class="row justify-content-center">
+       <div class="form-group col-sm-6">
+        <button class="btn btn-primary btn-block proceed-btn" type="button">Submit</button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark py-5">
+ <div class="container">
+  <div class="row text-white g-4">
+   <div class="col-md-6 col-lg-3">
+    <a class="text-uppercase text-decoration-none brand text-white" href="/index.html">AMR Mission</a>
+    <p class="text-white text-muted mt-3">One family, one mission, to provide best in class luxury transportation that exceeds expectations. We believe in delivering exceptional service, ensuring safety, and creating memorable experiences for every journey.</p>
+   </div>
+
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light">Links</h5>
+    <ul class="list-unstyled ul-links">
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/index.html"><i class="fas fa-chevron-right me-1"></i>Home</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/fleet.html"><i class="fas fa-chevron-right me-1"></i>Fleet</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/reservations.html"><i class="fas fa-chevron-right me-1"></i>Reservations</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/rates.html"><i class="fas fa-chevron-right me-1"></i>Rates</a></li>
+    </ul>
+    <ul class="list-unstyled ul-links ul-links2">
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/team.html"><i class="fas fa-chevron-right me-1"></i>Team</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/aboutus.html"><i class="fas fa-chevron-right me-1"></i>About Us</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/contactus.html"><i class="fas fa-chevron-right me-1"></i>Contact Us</a></li>
+     <li class="my-3"><a class="text-white text-decoration-none text-muted" href="/css/main.css" target="_blank"><i class="fas fa-chevron-right me-1"></i>CSS Rules</a></li>
+    </ul>
+   </div>
+
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light mb-3">Business Info</h5>
+    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+     <span class="me-3"><a class="text-white text-decoration-none text-muted" href="https://maps.app.goo.gl/H7g2X7NjfpCJ31Vn7" target="_blank"><i class="fas fa-map-marked-alt"></i></a></span>
+     <span class="fw-light">E-Transportation, Springfield, VA, 22153 United States of America</span>
+    </div>
+    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+     <span class="me-3"><a class="text-white text-decoration-none text-muted" href="mailto:info@amrtransportation.com"><i class="fas fa-envelope"></i></a></span>
+     <span class="fw-light">info@amrtransportation.com</span>
+    </div>
+    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+     <span class="me-3"><a class="text-white text-decoration-none text-muted" href="tel:703-678-8934"><i class="fas fa-phone-alt"></i></a></span>
+     <span class="fw-light">+1 (703) 678-8934</span>
+    </div>
+   </div>
+
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light mb-3">Follow Us</h5>
+    <ul class="list-unstyled d-flex">
+     <li><a class="text-white text-decoration-none text-muted fs-4 me-4" href="https://www.facebook.com/marketplace" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+     <li><a class="text-white text-decoration-none text-muted fs-4 me-4" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+     <li><a class="text-white text-decoration-none text-muted fs-4 me-4" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+     <li><a class="text-white text-decoration-none text-muted fs-4 me-4" href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</footer>
+
+<!-- Scripts -->
+<script defer src="/script/weatherTemp.js"></script>
+<script defer src="/script/contactus.js"></script>
+</body>
+</html>
+

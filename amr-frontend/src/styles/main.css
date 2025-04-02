@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --lg-font: 'Kaisei Tokumin', serif;
+  --sm-font: 'Poppins', sans-serif;
+}
+
+.first-section {
+  margin-top: 104px;
+}
+
+.hrLine {
+  position: relative;
+  border: none;
+  height: 5px !important;
+  width: 30%;
+  margin: auto;
+  background: #DBA800;
+
+}
+
+.hrLineDiv {
+  background-color: #B3B3B30D;
+}
+
+.bg-primary {
+  background-color: #DBA800 !important;
+}
+
+.btn {
+  background-color: #FFFFFF;
+  color: #555555;
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: 1px solid #555555;
+}
+
+.btn:hover {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+}
+
+.text-primary {
+  color: #DBA800 !important;
+}
+
+.navbar {
+  -webkit-box-shadow: 0 3px 9px 3px #0000001A;
+  box-shadow: 0 3px 9px 3px #0000001A;
+}
+
+.navbar-brand img {
+  width: 130px;
+}
+
+.navbar-brand span {
+  letter-spacing: 2px;
+  font-family: var(--lg-font);
+}
+
+a.nav-link:hover {
+  color: #DBA800 !important;
+}
+
+.nav-item {
+  border-bottom: 0.5px solid #0000000D;
+}
+
+.title h2::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: #DBA800;
+  left: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.title h2::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: #DBA800;
+  right: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+h3 {
+  margin: 0;
+  display: inline-block;
+  border-bottom: 4px solid #DBA800;
+}
+
+.active-filter-btn {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+}
+
+.filter-button-group .btn:hover {
+  color: #FFFFFF !important;
+}
+
+.card {
+  box-shadow: 0 3px 9px -1px #DBA800;
+  border-radius: 15px;
+}
+
+.card-header {
+  border-color: #DBA800;
+  background-color: #DBA8001A;
+}
+
+.special-list .btn {
+  padding: 8px 20px !important;
+}
+
+[id^="about"],
+.team-sec {
+  background-color: #B3B3B30D;
+}
+
+
+.team-img {
+  border: 1px solid #000000;
+  padding: 10px;
+  background-color: #DBA8001A;
+  width: 600px;
+}
+
+.team-img:hover {
+  transform: scale(1.1);
+}
+
+/* newsletter */
+.newsletter {
+  background-color: #B3B3B30D;
+}
+
+.newsletter p {
+  max-width: 600px;
+}
+
+.newsletter .input-group {
+  max-width: 500px;
+}
+
+.newsletter .form-control {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#name-btn {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+  border-radius: 0 !important;
+}
+
+#newsletter-btn,
+#reset-btn {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+#newsletter-btn:hover,
+#disclaimer-btn:hover,
+#name-btn:hover,
+#reset-btn:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.ui-dialog-buttonset button {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+}
+
+.ui-dialog-buttonset button:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+#disclaimer-btn {
+  background-color: #DBA800 !important;
+  color: #FFFFFF !important;
+  border-color: #DBA800 !important;
+}
+
+.newsletter [type="email"], #name-field {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.fleet-img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* footer */
+.ul-links {
+  display: inline-block;
+}
+
+.ul-links2 {
+  margin-left: 15px;
+}
+
+footer .brand {
+  font-family: var(--lg-font);
+  letter-spacing: 2px;
+}
+
+footer a:hover {
+  color: #DBA800 !important;
+}
+
+.fa-youtube:hover {
+  color: #F40A06;
+}
+
+.fa-instagram:hover {
+  color: #F21E98;
+}
+
+.fa-twitter:hover {
+  color: #1F97E1;
+}
+
+.fa-facebook-f:hover {
+  color: #0D63F5;
+}
+
+body {
+  font-family: var(--sm-font);
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%
+}
+
+.title::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: #DBA800;
+  left: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.message-text {
+  text-align: start !important;
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: #DBA800;
+  right: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.card {
+  padding: 30px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: none !important;
+  box-shadow: 0 2px 10px 0 #DBA800;
+}
+
+.form-control-label {
+  margin-bottom: 0
+}
+
+input,
+textarea,
+button {
+  padding: 8px 15px;
+  border-radius: 25px !important;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 18px !important;
+  font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #00BCD4;
+  outline-width: 0;
+  font-weight: 400
+}
+
+.btn-block {
+  text-transform: uppercase;
+  font-size: 15px !important;
+  font-weight: 400;
+  height: 43px;
+  cursor: pointer
+}
+
+.btn-block:hover {
+  color: #FFFFFF !important
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
+}
+
+tbody>tr:nth-child(odd) {
+  background-color: #FFE589;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+legend {
+  width: 50%;
+  float: unset;
+}
+
+label, #car-seat-text {
+  margin: 20px 0;
+  padding: 8px 15px;
+}
+
+#car-seat-text {
+  margin-bottom: unset;
+}
+
+label[for^="car-seat"] {
+  padding-left: 8px;
+}
+
+#preferred-drink {
+  width: 70%;
+}
+
+.flex-row {
+  justify-content: center;
+}
+
+.scroll-top {
+  margin-top: 50px;
+}
+
+.scroll-top>a:active,
+.scroll-bottom>a:active {
+  color: #DBA800 !important;
+}
+
+label[for="add-additional"],
+#pick-up-date,
+#pick-up-time,
+label[for="text-size-range"] {
+  margin: unset;
+}
+
+label[for="text-size-range"] {
+  padding: unset;
+}
+
+input[type="range"] {
+  width: 25%;
+  align-self: center;
+  margin-top: unset;
+  padding: unset;
+}
+
+.sale-text {
+  text-align: center;
+}
+
+.text-size-small {
+  font-size: 15px;
+}
+
+.text-size-large {
+  font-size: 25px;
+}
+
+.temperature-value {
+  margin: unset;
+}
+
+.edit-icon {
+  cursor: pointer;
+  color: #dba802;
+}
+.edit-icon:hover {
+  color: #000000;
+}
+
+#dialog {
+  display: none;
+}
+
+#dialog label {
+  margin: unset;
+  padding: unset;
+}
+
+.ui-widget-header {
+  color: #FFFFFF !important;
+  background: #dba802 !important;
+}
+
+label[id*="-error"] {
+  margin: unset;
+  text-align: left;
+  color: #dba802;
+  font-size: small;
+}
+
+.required-symbol {
+  color: #DBA802;
+}
+
+#reservationForm input[type="text"],
+#reservationForm input[type="email"],
+#reservationForm input[type="tel"] {
+  margin-bottom: unset;
+}
+
+#car-seat-container input,
+#car-seat-container label {
+  margin: unset;
+}
+
+#carSeatRequest-error {
+  text-align: center;
+}
+
+label[for="preferred-drink"] {
+  margin-bottom: unset;
+}
+
+.dt-layout-row:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.temperature-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.temp-city {
+  width: 100%;
+  font-size: x-small;
+}
+
+@media (min-width: 992px) {
+  .nav-item {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    max-width: 450px;
+  }
+
+  .dt-layout-row:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 992px) {
+  .rates,
+  .fleet,
+  .reservation,
+  .team-section,
+  .contact-form {
+    background: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .temperature-container {
+    display: none;
+  }
+}
+/* === Footer Text Visibility Fix === */
+.footer-light {
+  color: #ffffff !important;
+}
+
+.footer-light a,
+.footer-light p,
+.footer-light h5,
+.footer-light li,
+.footer-light span {
+  color: #ffffff !important;
+}
+.preview-fleet .card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.hero-img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-caption h1,
+.carousel-caption h2 {
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+.footer-light a:hover {
+  color: #ffd700 !important; /* Optional hover color (gold) */
+}
