@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <title>AMR - Rates</title>
+ <link rel="shortcut icon" href="/images/favicon.ico"/>
+ <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"/>
+ <link rel="stylesheet" href="/css/main.css"/>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+ <div class="container">
+  <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/index.html">
+   <span class="text-uppercase fw-lighter ms-2"><img src="/images/AMRLogo.png" alt="company-logo"/></span>
+  </a>
+  <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+   <ul class="navbar-nav mx-auto text-center">
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/index.html">home</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/fleet.html">fleet</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/reservations.html">reservations</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/rates.html">rates</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/team.html">team</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/aboutus.html">about us</a></li>
+    <li class="nav-item px-2 py-2"><a class="nav-link text-uppercase text-dark" href="/contactus.html">contact us</a></li>
+   </ul>
+  </div>
+  <div class="order-lg-1 navbar-nav temperature-container">
+   <p id="displayResult" class="nav-item temperature-value"></p>
+   <span>° F <i id="openDialog" class="nav-item fas fa-solid fa-pen edit-icon"></i></span>
+   <p id="displayCity" class="temperature-value temp-city"></p>
+  </div>
+  <div id="dialog">
+   <input type="text" id="userInput" placeholder="Enter your Zip Code"/>
+  </div>
+ </div>
+</nav>
+
+<section class="py-5 rates first-section" id="special">
+ <div class="container">
+  <div class="title text-center py-5">
+   <h2 class="position-relative d-inline-block">Rates</h2>
+  </div>
+  <div class="special-list row g-0" id="ratesTable">
+   <table class="table table-striped" id="rateTable">
+    <thead>
+    <tr>
+     <th scope="col">Vehicle Type</th>
+     <th scope="col">Make &amp; Model</th>
+     <th scope="col"># of Passengers</th>
+     <th scope="col">Hourly Rate</th>
+     <th scope="col">Additional Charges</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Data will be inserted here -->
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<footer class="bg-dark py-5">
+ <div class="container">
+  <div class="row text-white g-4">
+   <div class="col-md-6 col-lg-3">
+    <a class="text-uppercase text-decoration-none brand text-white" href="/index.html">AMR Mission</a>
+    <p class="text-white text-muted mt-3">One family, one mission, to provide best in class luxury transportation that exceeds expectations.</p>
+   </div>
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light">Links</h5>
+    <ul class="list-unstyled ul-links">
+     <li class="my-3"><a href="/index.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Home</a></li>
+     <li class="my-3"><a href="/fleet.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Fleet</a></li>
+     <li class="my-3"><a href="/reservations.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Reservations</a></li>
+     <li class="my-3"><a href="/rates.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Rates</a></li>
+    </ul>
+    <ul class="list-unstyled ul-links ul-links2">
+     <li class="my-3"><a href="/team.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Team</a></li>
+     <li class="my-3"><a href="/aboutus.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>About Us</a></li>
+     <li class="my-3"><a href="/contactus.html" class="text-white text-decoration-none text-muted"><i class="fas fa-chevron-right me-1"></i>Contact Us</a></li>
+    </ul>
+   </div>
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light mb-3">Business Info</h5>
+    <div class="d-flex my-2 text-muted">
+     <span class="me-3"><a href="https://maps.app.goo.gl/H7g2X7NjfpCJ31Vn7" target="_blank" class="text-white text-decoration-none text-muted"><i class="fas fa-map-marked-alt"></i></a></span>
+     <span>E-Transportation, Springfield, VA, 22153 USA</span>
+    </div>
+    <div class="d-flex my-2 text-muted">
+     <span class="me-3"><a href="mailto:info@amrtransportation.com" class="text-white text-decoration-none text-muted"><i class="fas fa-envelope"></i></a></span>
+     <span>info@amrtransportation.com</span>
+    </div>
+    <div class="d-flex my-2 text-muted">
+     <span class="me-3"><a href="tel:703-678-8934" class="text-white text-decoration-none text-muted"><i class="fas fa-phone-alt"></i></a></span>
+     <span>+1 (703) 678-8934</span>
+    </div>
+   </div>
+   <div class="col-md-6 col-lg-3">
+    <h5 class="fw-light mb-3">Follow Us</h5>
+    <ul class="list-unstyled d-flex">
+     <li><a href="https://www.facebook.com/marketplace" target="_blank" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-facebook-f"></i></a></li>
+     <li><a href="https://www.twitter.com" target="_blank" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-twitter"></i></a></li>
+     <li><a href="https://www.instagram.com" target="_blank" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-instagram"></i></a></li>
+     <li><a href="https://www.youtube.com" target="_blank" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</footer>
+
+<!-- Load Rates from JSON -->
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+  fetch("/data/rates.json")
+          .then(response => response.json())
+          .then(json => {
+           const tbody = document.querySelector("#rateTable tbody");
+           json.data.forEach(item => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>${item.vehicle_type}</td>
+            <td>${item.make_and_model}</td>
+            <td>${item.number_of_passengers}</td>
+            <td>$${item.hourly_rate.toFixed(2)}</td>
+            <td>$${item.additional_charges.toFixed(2)}</td>
+          `;
+            tbody.appendChild(row);
+           });
+          })
+          .catch(error => {
+           console.error("Error loading rates.json:", error);
+           const tbody = document.querySelector("#rateTable tbody");
+           const row = document.createElement("tr");
+           row.innerHTML = `<td colspan="5">Failed to load rate information.</td>`;
+           tbody.appendChild(row);
+          });
+ });
+</script>
+
+<!-- Optional Bootstrap Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="/script/weatherTemp.js"></script>
+
+</body>
+</html>
+
