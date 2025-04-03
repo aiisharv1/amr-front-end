@@ -14,8 +14,8 @@ function Reservations() {
         dropOff: '',
         carSeatRequest: '',
         preferredVehicle: '',
+        passengers: '',
         message: '',
-        subscribe: false,
     });
 
     const handleChange = (e) => {
@@ -141,35 +141,7 @@ function Reservations() {
                                                 />
                                             </div>
                                         </div>
-                                    </fieldset>
-
-                                    {/* Special Requests */}
-                                    <fieldset>
-                                        <legend>Special Requests</legend>
-                                        <div className="row justify-content-between text-left">
-                                            <div className="form-group col-sm-6 flex-column d-flex">
-                                                <p>Child Car Seat?<span className="required-symbol">*</span></p>
-                                                <div className="form-group col-sm-12 flex-row d-flex">
-                                                    <input
-                                                        type="radio"
-                                                        name="carSeatRequest"
-                                                        id="car-seat-request-yes"
-                                                        value="yes"
-                                                        checked={formData.carSeatRequest === 'yes'}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <label htmlFor="car-seat-request-yes" className="me-3">Yes</label>
-                                                    <input
-                                                        type="radio"
-                                                        name="carSeatRequest"
-                                                        id="car-seat-request-no"
-                                                        value="no"
-                                                        checked={formData.carSeatRequest === 'no'}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <label htmlFor="car-seat-request-no">No</label>
-                                                </div>
-                                            </div>
+                                        <div className="row justify-content-between text-left mt-3">
                                             <div className="form-group col-sm-6 flex-column d-flex">
                                                 <label htmlFor="preferredVehicle">Vehicle Type</label>
                                                 <select
@@ -186,8 +158,58 @@ function Reservations() {
                                                     <option value="Charter Bus">Charter Bus</option>
                                                 </select>
                                             </div>
+                                            <div className="form-group col-sm-6 flex-column d-flex">
+                                                <label htmlFor="passengers">Number of Passengers</label>
+                                                <input
+                                                    type="number"
+                                                    name="passengers"
+                                                    placeholder="e.g. 5"
+                                                    value={formData.passengers}
+                                                    onChange={handleChange}
+                                                    min="1"
+                                                    required
+                                                />
+                                            </div>
                                         </div>
                                     </fieldset>
+
+                                    {/* Special Requests */}
+                                    <fieldset>
+                                        <legend>Special Requests</legend>
+                                        <div className="row justify-content-center text-center">
+                                            <div className="form-group col-sm-8 d-flex flex-column align-items-center">
+                                                <p className="mb-3">Child Car Seat?<span className="required-symbol">*</span></p>
+                                                <div className="d-flex justify-content-center gap-5">
+                                                    <label className="form-check d-flex align-items-center gap-2">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="radio"
+                                                            name="carSeatRequest"
+                                                            id="car-seat-request-yes"
+                                                            value="yes"
+                                                            checked={formData.carSeatRequest === 'yes'}
+                                                            onChange={handleChange}
+                                                        />
+                                                        Yes
+                                                    </label>
+                                                    <label className="form-check d-flex align-items-center gap-2">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="radio"
+                                                            name="carSeatRequest"
+                                                            id="car-seat-request-no"
+                                                            value="no"
+                                                            checked={formData.carSeatRequest === 'no'}
+                                                            onChange={handleChange}
+                                                        />
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+
 
                                     {/* Additional */}
                                     <fieldset>
@@ -203,17 +225,9 @@ function Reservations() {
                                                     onChange={handleChange}
                                                 ></textarea>
                                             </div>
-                                            <div className="form-group col-12 flex-row d-flex mt-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="subscribe"
-                                                    checked={formData.subscribe}
-                                                    onChange={handleChange}
-                                                />
-                                                <label htmlFor="subscribe" className="ms-2">Subscribe to our newsletter</label>
-                                            </div>
                                         </div>
                                     </fieldset>
+
 
                                     {/* Submit */}
                                     <div className="row justify-content-center">
