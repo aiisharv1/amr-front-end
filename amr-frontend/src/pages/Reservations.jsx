@@ -130,6 +130,22 @@ function Reservations() {
             }
           }
         );
+
+        // Third API call to square to retain customer data
+        await axios.post(
+            'https://api.amr-transportation-test.com/customer/create',
+            JSON.stringify({
+              firstName: formData.fname,
+              lastName: formData.lname,
+              email: formData.email,
+              phoneNumber: formData.mob
+            }),
+            {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }
+        );
       } else {
         setResponseMessage('Sorry, there was an error. Please try again later.');
       }
