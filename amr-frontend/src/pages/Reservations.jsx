@@ -188,7 +188,7 @@ function Reservations() {
           }
 
           .card:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 20px #DBA800;
           }
 
           /* Success animation */
@@ -228,7 +228,7 @@ function Reservations() {
           }
 
           .required-symbol {
-            color: #dc3545;
+            color: #DBA800;
             margin-left: 4px;
           }
 
@@ -500,10 +500,10 @@ function Reservations() {
 
                     {/* Special Requests */}
                     <fieldset className="animate-in">
-                      <legend>Special Requests</legend>
+                      <legend>Special Requests<span className="required-symbol">*</span></legend>
                       <div className="form-group col-sm-12 flex-row d-flex">
                         <div className="form-group col-sm-6 flex-column d-flex">
-                          <p id="car-seat-text">Child Car Seat?<span className="required-symbol">*</span></p>
+                          <p id="car-seat-text">Child Car Seat?</p>
                           <div id="car-seat-container" className="form-group flex-row d-flex">
                             <input
                                 type="radio"
