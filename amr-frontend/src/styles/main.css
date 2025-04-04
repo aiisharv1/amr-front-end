@@ -67,7 +67,7 @@ a.nav-link:hover {
   border-bottom: 0.5px solid #0000000D;
 }
 
-.title h2::before {
+.title h2:not(h2.contact-us)::before {
   position: absolute;
   content: "";
   width: 4px;
@@ -80,7 +80,7 @@ a.nav-link:hover {
   transform: translateY(-50%);
 }
 
-.title h2::after {
+.title h2:not(h2.contact-us)::after {
   position: absolute;
   content: "";
   width: 4px;
@@ -253,7 +253,7 @@ body {
   background-size: 100% 100%
 }
 
-.title::before {
+.title:not(h2.contact-us)::before {
   position: absolute;
   content: "";
   width: 4px;
@@ -270,7 +270,7 @@ body {
   text-align: start !important;
 }
 
-.title::after {
+.title:not(h2.contact-us)::after {
   position: absolute;
   content: "";
   width: 4px;

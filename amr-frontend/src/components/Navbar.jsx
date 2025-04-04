@@ -64,6 +64,14 @@ function Navbar() {
 
   return (
     <>
+      <style jsx="true">{`
+        @media (max-width: 991px) {
+          .temperature-container {
+            display: none !important;
+          }
+        }
+      `}
+      </style>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top shadow-sm">
         <div className="container">
           {/* Brand Logo */}
@@ -135,7 +143,7 @@ function Navbar() {
               id="openDialog"
               className="nav-item fas fa-solid fa-pen edit-icon"
               style={{
-                color: '#FFD700', // Gold color
+                color: '#DBA800', // Gold color
                 marginLeft: '5px',
                 fontSize: '14px',
                 textShadow: '0 0 1px rgba(0,0,0,0.2)'
