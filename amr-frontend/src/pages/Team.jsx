@@ -1,303 +1,237 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function Team() {
-  // Add animation on scroll
-  useEffect(() => {
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate-on-scroll');
-
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (elementTop < windowHeight - 100) {
-          element.classList.add('animate');
-        }
-      });
-    };
-
-    // Run on initial load
-    animateOnScroll();
-
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
-
-    // Clean up event listener
-    return () => {
-      window.removeEventListener('scroll', animateOnScroll);
-    };
-  }, []);
-
   return (
     <>
       <Navbar />
 
       <style jsx="true">{`
-        /* Team page styles */
-        .first-section {
-          margin-top: 100px;
+        /* Team page styles with proper spacing to avoid header overlap */
+        body {
+          background-color: #ffffff;
         }
         
-        .team-img {
-          border-radius: 10px;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-          transition: transform 0.5s ease, box-shadow 0.5s ease;
+        .page-container {
           max-width: 100%;
-          height: auto;
+          overflow-x: hidden;
         }
         
-        .team-img:hover {
-          transform: scale(1.03);
-          box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        .team-section {
+          padding: 0 0 100px;
+          background-color: #ffffff;
+          position: relative;
+          /* Added extra top padding to account for fixed header */
+          margin-top: 120px;
         }
         
-        .team-names {
-          font-weight: 600;
-          color: #343a40;
+        .team-header {
+          position: relative;
+          margin-bottom: 80px;
+          text-align: center;
+          padding-top: 50px; /* Extra padding at top */
+        }
+        
+        .team-title {
+          font-size: 40px;
+          font-weight: 700;
+          color: #000;
           position: relative;
           display: inline-block;
+          margin: 0;
+          padding: 0 20px;
         }
         
-        .team-names::after {
+        .team-title::before,
+        .team-title::after {
           content: '';
           position: absolute;
-          bottom: -5px;
-          left: 0;
-          width: 0;
-          height: 3px;
-          background-color: #007bff;
-          transition: width 0.3s ease;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 3px;
+          height: 80px;
+          background-color: #DBA800;
         }
         
-        .text-lg-end .team-names::after {
-          left: auto;
-          right: 0;
+        .team-title::before {
+          left: -15px;
         }
         
-        .team-sec:hover .team-names::after {
-          width: 100%;
+        .team-title::after {
+          right: -15px;
         }
         
-        .hrLine {
-          height: 2px;
-          background-image: linear-gradient(to right, transparent, #007bff, transparent);
-          border: none;
-          margin: 2rem auto;
-          width: 80%;
-          opacity: 0.5;
-        }
-        
-        .scroll-top, .scroll-bottom {
-          justify-content: center;
-          margin: 20px 0;
-        }
-        
-        .scroll-top a, .scroll-bottom a {
-          padding: 8px 15px;
-          background-color: #f8f9fa;
-          border-radius: 20px;
-          color: #6c757d;
-          transition: all 0.3s ease;
-          font-weight: 500;
+        .team-container {
           display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          max-width: 1200px;
+          margin: 0 auto;
+          gap: 120px;
+          padding: 0 20px;
+        }
+        
+        .team-member {
+          display: flex;
+          flex-direction: column;
           align-items: center;
+          width: 250px;
         }
         
-        .scroll-top a:hover, .scroll-bottom a:hover {
-          background-color: #007bff;
-          color: white !important;
-          text-decoration: none;
+        .team-member-image {
+          width: 220px;
+          height: 220px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-bottom: 30px;
+          border: 10px solid #f8f8f8;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
         }
         
-        .scroll-bottom a:after {
-          content: "\\f078";
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          margin-left: 8px;
+        .team-member-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         
-        .scroll-top a:before {
-          content: "\\f077";
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          margin-right: 8px;
+        .member-name {
+          font-size: 24px;
+          font-weight: 600;
+          color: #000;
+          margin: 0 0 5px 0;
+          text-align: center;
         }
         
-        /* Animation classes */
-        .animate-on-scroll {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animate-on-scroll.animate {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        .animate-left {
-          transform: translateX(-30px);
-        }
-        
-        .animate-right {
-          transform: translateX(30px);
-        }
-        
-        .animate-left.animate, .animate-right.animate {
-          transform: translateX(0);
-        }
-        
-        .delay-1 {
-          transition-delay: 0.2s;
-        }
-        
-        .delay-2 {
-          transition-delay: 0.4s;
-        }
-        
-        .delay-3 {
-          transition-delay: 0.6s;
+        .member-title {
+          font-size: 16px;
+          color: #666;
+          margin: 0;
+          text-align: center;
+          font-weight: 400;
         }
         
         /* Mobile responsiveness */
         @media (max-width: 992px) {
-          .team-sec {
-            text-align: center !important;
+          .team-container {
+            gap: 60px;
           }
           
-          .text-lg-start, .text-lg-end {
-            text-align: center !important;
+          .team-title {
+            font-size: 36px;
           }
           
-          .team-names::after {
-            left: 50% !important;
-            right: auto !important;
-            transform: translateX(-50%);
+          .team-title::before,
+          .team-title::after {
+            height: 60px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .team-section {
+            margin-top: 100px;
           }
           
-          .team-sec:hover .team-names::after {
-            width: 80%;
+          .team-header {
+            padding-top: 30px;
           }
           
-          .order-lg-0, .order-lg-1 {
-            order: unset !important;
+          .team-container {
+            gap: 40px;
           }
           
-          .first-section {
+          .team-member {
+            width: 200px;
+          }
+          
+          .team-member-image {
+            width: 180px;
+            height: 180px;
+            border-width: 8px;
+          }
+          
+          .member-name {
+            font-size: 20px;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .team-section {
             margin-top: 80px;
           }
           
-          .row.gy-lg-5 {
-            row-gap: 2rem !important;
+          .team-header {
+            margin-bottom: 50px;
+            padding-top: 20px;
+          }
+          
+          .team-title {
+            font-size: 30px;
+          }
+          
+          .team-title::before,
+          .team-title::after {
+            height: 50px;
+          }
+          
+          .team-container {
+            gap: 30px;
+          }
+          
+          .team-member {
+            width: 160px;
+          }
+          
+          .team-member-image {
+            width: 150px;
+            height: 150px;
+            border-width: 6px;
+            margin-bottom: 20px;
+          }
+          
+          .member-name {
+            font-size: 18px;
+          }
+          
+          .member-title {
+            font-size: 14px;
           }
         }
       `}</style>
 
-      <main className="team-section">
-        <section id="top-section" className="py-5 first-section team-sec">
-          <div className="form-group col-sm-12 flex-row d-flex scroll-bottom">
-            <a className="text-decoration-none text-muted" href="#bottom-section">Scroll to Bottom</a>
+      <div className="page-container">
+        <section className="team-section">
+          <div className="team-header">
+            <h1 className="team-title">Our Team</h1>
           </div>
-          <div className="container">
-            <div className="title text-center py-5 animate-on-scroll">
-              <h2 className="position-relative d-inline-block">Our Team</h2>
-            </div>
-            <div className="row gy-lg-5 align-items-end">
-              <div className="col-lg-6 order-lg-1 text-center text-lg-start animate-on-scroll animate-left">
-                <h3 className="team-names">HIDAYAT ULLAH</h3>
-                <p className="lead text-muted delay-1">Founder</p>
-                <p className="delay-2">A father to 4 kids, who migrated to US in 2005.</p>
-              </div>
-              <div className="col-lg-6 order-lg-0 text-end animate-on-scroll animate-right">
-                <img
-                  src="/images/entrepreneur-593358_1280.jpg"
-                  alt="A picture of the company founder Hidayat Ullah"
-                  className="img-fluid team-img"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <div className="hrLineDiv">
-          <hr className="hrLine" />
-        </div>
+          <div className="team-container">
+            <div className="team-member">
+              <div className="team-member-image">
+                <img src="/images/entrepreneur-593358_1280.jpg" alt="Hidayat Ullah" />
+              </div>
+              <h2 className="member-name">Hidayat Ullah</h2>
+              <p className="member-title">Founder</p>
+            </div>
 
-        <section className="py-5 team-sec">
-          <div className="container">
-            <div className="row gy-lg-5 align-items-end">
-              <div className="col-lg-6 order-lg-1 text-center text-lg-start animate-on-scroll animate-left">
-                <img
-                  src="/images/man-3803551_1280.jpg"
-                  alt="Picture of CFO of the company AMR"
-                  className="img-fluid team-img"
-                />
+            <div className="team-member">
+              <div className="team-member-image">
+                <img src="/images/woman-3116587_1280.jpg" alt="Sana Hidayat" />
               </div>
-              <div className="col-lg-6 order-lg-0 text-end">
-                <div className="col-lg-6 order-lg-1 text-center text-lg-end animate-on-scroll animate-right">
-                  <h3 className="team-names">MUHAMMAD AWAIS</h3>
-                  <p className="lead text-muted delay-1">Chief Financial Officer</p>
-                  <p className="delay-2">A father to 3 kids, and one on the way. Also, a professor at GMU.</p>
-                </div>
+              <h2 className="member-name">Sana Hidayat</h2>
+              <p className="member-title">Chief Technology Officer</p>
+            </div>
+
+            <div className="team-member">
+              <div className="team-member-image">
+                <img src="/images/adult-1867471_1280.jpg" alt="Muhammad Ali" />
               </div>
+              <h2 className="member-name">Muhammad Ali</h2>
+              <p className="member-title">Marketing Manager</p>
             </div>
           </div>
         </section>
-
-        <div className="hrLineDiv">
-          <hr className="hrLine" />
-        </div>
-
-        <section className="py-5 team-sec">
-          <div className="container">
-            <div className="row gy-lg-5 align-items-end">
-              <div className="col-lg-6 order-lg-1 text-center text-lg-start animate-on-scroll animate-left">
-                <h3 className="team-names">SANA HIDAYAT</h3>
-                <p className="lead text-muted delay-1">Chief Technology Officer</p>
-                <p className="delay-2">A mother to 1 daughter, and one on the way. Married to amazing husband in London.</p>
-              </div>
-              <div className="col-lg-6 order-lg-0 text-end animate-on-scroll animate-right">
-                <img
-                  src="/images/woman-3116587_1280.jpg"
-                  alt="Picture of CTO of the company AMR"
-                  className="img-fluid team-img"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="hrLineDiv">
-          <hr className="hrLine" />
-        </div>
-
-        <section id="bottom-section" className="py-5 team-sec">
-          <div className="container">
-            <div className="row gy-lg-5 align-items-end">
-              <div className="col-lg-6 order-lg-1 text-center text-lg-start animate-on-scroll animate-left">
-                <img
-                  src="/images/adult-1867471_1280.jpg"
-                  alt="Picture of the Marketing Manager of the company AMR"
-                  className="img-fluid team-img"
-                />
-              </div>
-              <div className="col-lg-6 order-lg-0 text-end">
-                <div className="col-lg-6 order-lg-1 text-center text-lg-end animate-on-scroll animate-right">
-                  <h3 className="team-names">MUHAMMAD ALI</h3>
-                  <p className="lead text-muted delay-1">Marketing Manager</p>
-                  <p className="delay-2">GMU Alumni, pursuing Neurology at GW University.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="form-group col-sm-12 flex-row d-flex scroll-top mt-3">
-            <a className="text-decoration-none text-muted" href="#top-section">Scroll to Top</a>
-          </div>
-        </section>
-      </main>
+      </div>
 
       <Footer />
     </>

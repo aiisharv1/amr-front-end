@@ -130,6 +130,31 @@ function Reservations() {
             }
           }
         );
+
+        // Added customer creation API call
+        await axios.post(
+          'https://api.amr-transportation-test.com/customer/create',
+          JSON.stringify({
+            firstName: formData.fname,
+            lastName: formData.lname,
+            email: formData.email,
+            phoneNumber: formData.mob
+          }),
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        ).then(response => {
+          if (response.data.status === 'success') {
+            console.log(response.data.message);
+          } else {
+            console.log(response.data.message);
+          }
+        }).catch(error => {
+          console.log('Error:', error);
+        });
+
       } else {
         setResponseMessage('Sorry, there was an error. Please try again later.');
       }
