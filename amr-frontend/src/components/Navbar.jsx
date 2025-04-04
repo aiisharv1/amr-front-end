@@ -127,10 +127,10 @@ function Navbar() {
             onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f8f9fa'}
             onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
           >
-            <p id="displayResult" className="nav-item temperature-value" style={{ margin: '0 5px 0 0', fontWeight: '500' }}>
+            <p id="displayResult" className="nav-item temperature-value" style={{ fontWeight: '500' }}>
               {temperature}
             </p>
-            <span style={{ margin: '0 5px' }}>&deg;F</span>
+            <span style={{ marginRight: '5px' }}>&deg;F</span>
             <i
               id="openDialog"
               className="nav-item fas fa-solid fa-pen edit-icon"
@@ -141,7 +141,7 @@ function Navbar() {
                 textShadow: '0 0 1px rgba(0,0,0,0.2)'
               }}
             ></i>
-            <p id="displayCity" className="temperature-value temp-city" style={{ margin: '0 0 0 10px', fontSize: '14px' }}>
+            <p id="displayCity" className="temperature-value temp-city" style={{ fontSize: '14px' }}>
               {city}
             </p>
           </div>
@@ -233,7 +233,7 @@ function Navbar() {
                 onClick={fetchWeatherData}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: '#007bff',
+                  backgroundColor: '#DBA802',
                   color: 'white',
                   border: 'none',
                   borderRadius: '4px',

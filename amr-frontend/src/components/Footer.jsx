@@ -21,273 +21,140 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="bg-dark py-5">
-      <style jsx="true">{`
-        /* Hidden element to test Font Awesome loading */
-        .icon-test {
-          position: absolute;
-          opacity: 0;
-          pointer-events: none;
-        }
-        
-        footer {
-          background-color: #1e2124;
-          padding: 60px 0;
-        }
-        
-        .footer-container {
-          max-width: 1140px;
-          margin: 0 auto;
-          padding: 0 15px;
-        }
-        
-        .footer-row {
-          display: flex;
-          flex-wrap: wrap;
-          margin-right: -15px;
-          margin-left: -15px;
-        }
-        
-        .footer-col {
-          position: relative;
-          width: 100%;
-          padding-right: 15px;
-          padding-left: 15px;
-          flex: 0 0 25%;
-          max-width: 25%;
-        }
-        
-        .mission-title {
-          font-size: 24px;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 25px;
-          letter-spacing: 1px;
-        }
-        
-        .mission-text {
-          color: #9da9b9;
-          line-height: 1.6;
-          font-size: 15px;
-          font-weight: 400;
-        }
-        
-        .footer-heading {
-          font-size: 20px;
-          font-weight: 500;
-          color: #fff;
-          margin-bottom: 25px;
-        }
-        
-        .footer-links-container {
-          display: flex;
-        }
-        
-        .footer-links-left {
-          margin-right: 50px;
-        }
-        
-        .footer-link {
-          color: #9da9b9;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          margin-bottom: 18px;
-          transition: color 0.2s;
-          font-weight: 400;
-        }
-        
-        .footer-link:hover {
-          color: #DBA800;
-        }
-        
-        .footer-link i {
-          font-size: 12px;
-          margin-right: 8px;
-        }
-        
-        .business-info-item {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 20px;
-          color: #9da9b9;
-        }
-        
-        .business-info-text {
-          margin-left: 15px;
-          font-weight: 400;
-        }
-        
-        .business-info-icon {
-          font-size: 18px;
-          color: #9da9b9;
-          width: 20px;
-          text-align: center;
-        }
-        
-        .social-links {
-          display: flex;
-          gap: 25px;
-        }
-        
-        .social-link {
-          color: #9da9b9;
-          font-size: 22px;
-          transition: color 0.2s;
-        }
-        
-        .social-link:hover.facebook {
-          color: #0D63F5;
-        }
-        
-        .social-link:hover.twitter {
-          color: #1F97E1;
-        }
-        
-        .social-link:hover.instagram {
-          color: #F21E98;
-        }
-        
-        .social-link:hover.youtube {
-          color: #F40A06;
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 992px) {
-          .footer-col {
-            flex: 0 0 50%;
-            max-width: 50%;
-            margin-bottom: 30px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .footer-col {
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin-bottom: 30px;
-          }
-          
-          .footer-links-container {
-            flex-direction: column;
-          }
-          
-          .footer-links-left {
-            margin-right: 0;
-            margin-bottom: 15px;
-          }
-        }
-      `}</style>
-
-      {/* Hidden element to test Font Awesome loading */}
-      <i className="fas fa-check icon-test"></i>
-
-      <div className="footer-container">
-        <div className="footer-row">
-          {/* AMR Mission */}
-          <div className="footer-col">
-            <div className="mission-title">AMR MISSION</div>
-            <div className="mission-text">
-              One family, one mission, to provide best in class luxury transportation that exceeds expectations. We believe in delivering exceptional service, ensuring safety, and creating memorable experiences for every journey.
+      <footer className="bg-dark py-5">
+        <style jsx="true">{`
+         /* Hidden element to test Font Awesome loading */
+         .icon-test {
+           position: absolute;
+           opacity: 0;
+           pointer-events: none;
+           }
+        `}</style>
+        {/* Hidden element to test Font Awesome loading */}
+        <i className="fas fa-check icon-test"></i>
+        <div className="container">
+          <div className="row text-white g-4">
+            <div className="col-md-6 col-lg-3">
+              <Link to="/" className="text-uppercase text-decoration-none brand text-white">AMR Mission</Link>
+              <p className="text-white text-muted mt-3">One family, one mission, to provide best in class luxury
+                transportation
+                that exceeds expectations. We believe in delivering exceptional service, ensuring safety, and creating
+                memorable experiences for every journey.</p>
             </div>
-          </div>
 
-          {/* Links */}
-          <div className="footer-col">
-            <div className="footer-heading">Links</div>
-            <div className="footer-links-container">
-              <div className="footer-links-left">
-                <Link to="/" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Home
-                </Link>
-                <Link to="/fleet" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Fleet
-                </Link>
-                <Link to="/reservations" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Reservations
-                </Link>
-                <Link to="/rates" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Rates
-                </Link>
+            <div className="col-md-6 col-lg-3">
+              <h5 className="fw-light">Links</h5>
+              <ul className="list-unstyled ul-links">
+                <li className="my-3">
+                  <Link className="text-white text-decoration-none text-muted" to={"/"}>
+                    <i className="fas fa-chevron-right me-1"></i>Home
+                  </Link>
+                </li>
+                <li className="my-3">
+                  <Link to={"/fleet"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>Fleet
+                  </Link>
+                </li>
+                <li className="my-3">
+                  <Link to={"/reservations"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>Reservations
+                  </Link>
+                </li>
+                <li className="my-3">
+                  <Link to={"/rates"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>Rates
+                  </Link>
+                </li>
+              </ul>
+              <ul className="list-unstyled ul-links ul-links2">
+                <li className="my-3">
+                  <Link to={"/team"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>Team
+                  </Link>
+                </li>
+                <li className="my-3">
+                  <Link to={"/aboutus"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>About Us
+                  </Link>
+                </li>
+                <li className="my-3">
+                  <Link to={"/contactus"} className="text-white text-decoration-none text-muted">
+                    <i className="fas fa-chevron-right me-1"></i>Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-md-6 col-lg-3">
+              <h5 className="fw-light mb-3">Business Info</h5>
+              <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span className="me-3">
+                            <Link to="https://maps.app.goo.gl/H7g2X7NjfpCJ31Vn7" target="_blank"
+                               className="text-white text-decoration-none text-muted">
+                                <i className="fas fa-map-marked-alt"></i>
+                            </Link>
+                        </span>
+                <span className="fw-light">
+                            E-Transportation, Springfield, VA, 22153 United States of America
+                        </span>
               </div>
-              <div className="footer-links-right">
-                <Link to="/team" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Team
-                </Link>
-                <Link to="/aboutus" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>About Us
-                </Link>
-                <Link to="/contactus" className="footer-link">
-                  <i className="fas fa-chevron-right"></i>Contact Us
-                </Link>
+              <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span className="me-3">
+                            <Link to="mailto:info@amrtransportation.com"
+                               className="text-white text-decoration-none text-muted">
+                                <i className="fas fa-envelope"></i>
+                            </Link>
+                        </span>
+                <span className="fw-light">
+                            info@amrtransportation.com
+                        </span>
+              </div>
+              <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span className="me-3">
+                            <Link to="tel:703-678-8934" className="text-white text-decoration-none text-muted">
+                                <i className="fas fa-phone-alt"></i>
+                            </Link>
+                        </span>
+                <span className="fw-light">
+                            +1 (703) 678-8934
+                        </span>
               </div>
             </div>
-          </div>
 
-          {/* Business Info */}
-          <div className="footer-col">
-            <div className="footer-heading">Business Info</div>
-            <div className="business-info-item">
-              <i className="fas fa-map-marker-alt business-info-icon"></i>
-              <div className="business-info-text">
-                E-Transportation, Springfield, VA, 22153 United States of America
+            <div className="social-media col-md-6 col-lg-3">
+              <h5 className="fw-light mb-3">Follow Us</h5>
+              <div>
+                <ul className="list-unstyled d-flex">
+                  <li>
+                    <Link to="https://www.facebook.com" target="_blank"
+                       className="text-white text-decoration-none text-muted fs-4 me-4">
+                      <i className="fab fa-facebook-f"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.twitter.com" target="_blank"
+                       className="text-white text-decoration-none text-muted fs-4 me-4">
+                      <i className="fab fa-twitter"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.instagram.com" target="_blank"
+                       className="text-white text-decoration-none text-muted fs-4 me-4">
+                      <i className="fab fa-instagram"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.youtube.com" target="_blank"
+                       className="text-white text-decoration-none text-muted fs-4 me-4">
+                      <i className="fab fa-youtube"></i>
+                    </Link>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div className="business-info-item">
-              <i className="fas fa-envelope business-info-icon"></i>
-              <div className="business-info-text">
-                info@amrtransportation.com
-              </div>
-            </div>
-            <div className="business-info-item">
-              <i className="fas fa-phone-alt business-info-icon"></i>
-              <div className="business-info-text">
-                +1 (703) 678-8934
-              </div>
-            </div>
-          </div>
-
-          {/* Follow Us */}
-          <div className="footer-col">
-            <div className="footer-heading">Follow Us</div>
-            <div className="social-links">
-              <a
-                href="https://www.facebook.com/marketplace"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link facebook"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="https://www.twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link twitter"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link instagram"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link youtube"
-              >
-                <i className="fab fa-youtube"></i>
-              </a>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 }
 

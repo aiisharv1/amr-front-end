@@ -224,7 +224,7 @@ footer .brand {
   letter-spacing: 2px;
 }
 
-footer a:hover {
+footer a:not(.social-media a):hover {
   color: #DBA800 !important;
 }
 
@@ -482,6 +482,10 @@ label[for="preferred-drink"] {
 .temp-city {
   width: 100%;
   font-size: x-small;
+}
+
+.text-muted {
+  color: #6c757d !important;
 }
 
 @media (min-width: 992px) {
