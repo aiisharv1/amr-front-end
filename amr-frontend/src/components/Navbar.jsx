@@ -233,7 +233,7 @@ function Navbar() {
                 onClick={fetchWeatherData}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: '#007bff',
+                  backgroundColor: '#DBA802',
                   color: 'white',
                   border: 'none',
                   borderRadius: '4px',
