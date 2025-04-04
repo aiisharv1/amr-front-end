@@ -88,8 +88,12 @@ function Team() {
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 30px;
-            border: 10px solid #f8f8f8;
+            border: 0.5rem solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          }
+
+          .team-member-image:hover {
+            transform: scale(1.1);
           }
 
           .team-member-image img {

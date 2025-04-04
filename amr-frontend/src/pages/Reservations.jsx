@@ -267,14 +267,14 @@ function Reservations() {
             padding: 10px 30px;
             font-weight: 600;
             transition: all 0.3s ease;
-            background-color: #007bff;
+            background-color: #FFFFFF;
             border: none;
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 4px 10px rgba(94, 94, 94, 0.3);
           }
 
           .proceed-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+            box-shadow: 0 4px 10px rgba(94, 94, 94, 0.3);
           }
 
           .proceed-btn:active {
