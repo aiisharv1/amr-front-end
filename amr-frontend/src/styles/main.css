@@ -297,7 +297,8 @@ body {
 
 input,
 textarea,
-button {
+button,
+select {
   padding: 8px 15px;
   border-radius: 25px !important;
   margin: 20px 0;

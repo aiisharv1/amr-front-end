@@ -462,7 +462,6 @@ function Reservations() {
                         />
                       </div>
                       <div className="form-group col-sm-6 flex-column d-flex">
-                        <label htmlFor="vehicleType" style={{ paddingBottom: 0, margin: 'unset' }}>Vehicle Type</label>
                         <div className="form-group col-sm-12 flex-row d-flex">
                           <select
                             id="vehicle-type"
@@ -472,7 +471,7 @@ function Reservations() {
                             style={{ width: '100%' }}
                             required
                           >
-                            <option value="" disabled>Select vehicle</option>
+                            <option value="" disabled>Select vehicle type</option>
                             <option value="suv">SUV</option>
                             <option value="sedan">Sedan</option>
                             <option value="limoBus">Limo Bus</option>
