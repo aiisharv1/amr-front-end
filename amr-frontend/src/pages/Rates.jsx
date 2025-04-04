@@ -1,61 +1,110 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import axios from 'axios';
+import $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-bs5';
+import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function Rates() {
-    return (
-        <>
-            <Navbar />
+  const tableRef = useRef(null);
 
-            <section id="special" className="py-5 rates first-section">
-                <div className="container">
-                    <div className="title text-center py-5">
-                        <h2 className="position-relative d-inline-block">Rates</h2>
-                    </div>
+  useEffect(() => {
+    // Initialize DataTable when component mounts
+    let dataTable = null;
 
-                    <div id="ratesTable" className="special-list row g-0">
-                        <table id="rateTable" className="table table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col">Vehicle Type</th>
-                                <th scope="col">Make & Model</th>
-                                <th scope="col"># of Passengers</th>
-                                <th scope="col">Hourly Rate</th>
-                                <th scope="col">Additional Charges</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {/* We'll dynamically load this data later using rates.json */}
-                            <tr>
-                                <td>SUV</td>
-                                <td>Cadillac Escalade</td>
-                                <td>6</td>
-                                <td>$95/hr</td>
-                                <td>+ Gratuity</td>
-                            </tr>
-                            <tr>
-                                <td>Luxury Sedan</td>
-                                <td>Mercedes-Benz S-Class</td>
-                                <td>4</td>
-                                <td>$110/hr</td>
-                                <td>+ Gratuity</td>
-                            </tr>
-                            <tr>
-                                <td>Van</td>
-                                <td>Ford Transit</td>
-                                <td>10</td>
-                                <td>$85/hr</td>
-                                <td>+ Gratuity</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+    const initializeDataTable = async () => {
+      try {
+        // Fetch rates data
+        const response = await axios.get('data/rates.json');
 
-            <Footer />
-        </>
-    );
+        // Initialize DataTable with the fetched data
+        if (tableRef.current && !$.fn.DataTable.isDataTable(tableRef.current)) {
+          dataTable = $(tableRef.current).DataTable({
+            data: response.data.data,
+            columns: [
+              { data: 'vehicle_type', title: 'Vehicle Type' },
+              { data: 'make_and_model', title: 'Make & Model' },
+              { data: 'number_of_passengers', title: '# of Passengers' },
+              {
+                data: 'hourly_rate',
+                title: 'Hourly Rate',
+                render: function (data) {
+                  return `$${parseFloat(data).toFixed(2)}`;
+                }
+              },
+              {
+                data: 'additional_charges',
+                title: 'Additional Charges',
+                render: function (data) {
+                  return `$${parseFloat(data).toFixed(2)}`;
+                }
+              }
+            ],
+            responsive: true,
+            ordering: true,
+            searching: true,
+            paging: true,
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            dom: 'lfrtip'
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching rates data:', error);
+      }
+    };
+
+    initializeDataTable();
+
+    // Clean up DataTable instance when component unmounts
+    return () => {
+      if (dataTable) {
+        dataTable.destroy();
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+
+      <section id="special" className="py-5 rates first-section">
+        <div className="container">
+          <div className="title text-center py-5">
+            <h2 className="position-relative d-inline-block">Rates</h2>
+          </div>
+
+          <div id="ratesTable" className="special-list row g-0">
+            <div className="table-responsive">
+              <table
+                id="rateTable"
+                ref={tableRef}
+                className="table table-striped"
+                style={{ width: '100%' }}
+              >
+                <thead>
+                  <tr>
+                    <th>Vehicle Type</th>
+                    <th>Make & Model</th>
+                    <th># of Passengers</th>
+                    <th>Hourly Rate</th>
+                    <th>Additional Charges</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* DataTables will populate this */}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
 }
 
 export default Rates;
