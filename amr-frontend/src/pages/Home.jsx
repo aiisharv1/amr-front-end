@@ -22,6 +22,9 @@ function Home() {
 
 	return (
 		<>
+			<head>
+				<title>AMR - HOME</title>
+			</head>
 			<Navbar />
 
 			<style jsx="true">{`

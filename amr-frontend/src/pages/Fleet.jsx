@@ -71,72 +71,75 @@ function Fleet() {
   };
 
   return (
-    <>
-      <Navbar />
+      <>
+        <head>
+          <title>AMR - Fleet</title>
+        </head>
+        <Navbar/>
 
-      <section id="special" className="py-5 fleet first-section">
-        <div className="container">
-          <div className="title text-center py-5">
-            <h2 className="position-relative d-inline-block">Fleet</h2>
-          </div>
+        <section id="special" className="py-5 fleet first-section">
+          <div className="container">
+            <div className="title text-center py-5">
+              <h2 className="position-relative d-inline-block">Fleet</h2>
+            </div>
 
-          {loading ? (
-            <div className="text-center py-5">
-              <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </div>
-              <p className="mt-3">Loading our luxury fleet...</p>
-            </div>
-          ) : error ? (
-            <div className="alert alert-danger text-center" role="alert">
-              {error}
-            </div>
-          ) : (
-            <div className="special-list row g-0">
-              {vehicles.map((vehicle) => (
-                <div
-                  id={vehicle.name}
-                  key={vehicle.id}
-                  className="col-md-6 col-lg-4 col-xl-3 p-2"
-                >
-                  <div
-                    id={`${vehicle.name}-img-container`}
-                    className="special-img position-relative overflow-hidden"
-                  >
-                    <img
-                      id={`${vehicle.name}-img`}
-                      src={vehicle.image}
-                      alt={vehicle.alt}
-                      className="w-100 fleet-img"
-                      onError={handleImageError}
-                    />
+            {loading ? (
+                <div className="text-center py-5">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
-                  <div className="text-center">
-                    <div className="rating mt-3">
-                      {renderStars()}
-                    </div>
-                    <p
-                      id={`${vehicle.name}-make-model`}
-                      className="text-capitalize my-1"
-                    >
-                      {vehicle.makeAndModel}
-                    </p>
-                    <Link
-                      to={`/reservations?vehicle=${encodeURIComponent(vehicle.makeAndModel)}`}
-                      className="btn btn-primary btn-block proceed-btn"
-                    >
-                      Reserve Now
-                    </Link>
-                  </div>
+                  <p className="mt-3">Loading our luxury fleet...</p>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+            ) : error ? (
+                <div className="alert alert-danger text-center" role="alert">
+                  {error}
+                </div>
+            ) : (
+                <div className="special-list row g-0">
+                  {vehicles.map((vehicle) => (
+                      <div
+                          id={vehicle.name}
+                          key={vehicle.id}
+                          className="col-md-6 col-lg-4 col-xl-3 p-2"
+                      >
+                        <div
+                            id={`${vehicle.name}-img-container`}
+                            className="special-img position-relative overflow-hidden"
+                        >
+                          <img
+                              id={`${vehicle.name}-img`}
+                              src={vehicle.image}
+                              alt={vehicle.alt}
+                              className="w-100 fleet-img"
+                              onError={handleImageError}
+                          />
+                        </div>
+                        <div className="text-center">
+                          <div className="rating mt-3">
+                            {renderStars()}
+                          </div>
+                          <p
+                              id={`${vehicle.name}-make-model`}
+                              className="text-capitalize my-1"
+                          >
+                            {vehicle.makeAndModel}
+                          </p>
+                          <Link
+                              to={`/reservations?vehicle=${encodeURIComponent(vehicle.makeAndModel)}`}
+                              className="btn btn-primary btn-block proceed-btn"
+                          >
+                            Reserve Now
+                          </Link>
+                        </div>
+                      </div>
+                  ))}
+                </div>
+            )}
+          </div>
+        </section>
 
-      <Footer />
-    </>
+        <Footer/>
+      </>
   );
 }
 

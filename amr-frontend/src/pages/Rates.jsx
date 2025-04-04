@@ -67,24 +67,27 @@ function Rates() {
   }, []);
 
   return (
-    <>
-      <Navbar />
+      <>
+        <head>
+          <title>AMR - Rates</title>
+        </head>
+        <Navbar/>
 
-      <section id="special" className="py-5 rates first-section">
-        <div className="container">
-          <div className="title text-center py-5">
-            <h2 className="position-relative d-inline-block">Rates</h2>
-          </div>
+        <section id="special" className="py-5 rates first-section">
+          <div className="container">
+            <div className="title text-center py-5">
+              <h2 className="position-relative d-inline-block">Rates</h2>
+            </div>
 
-          <div id="ratesTable" className="special-list row g-0">
-            <div className="table-responsive">
-              <table
-                id="rateTable"
-                ref={tableRef}
-                className="table table-striped"
-                style={{ width: '100%' }}
-              >
-                <thead>
+            <div id="ratesTable" className="special-list row g-0">
+              <div className="table-responsive">
+                <table
+                    id="rateTable"
+                    ref={tableRef}
+                    className="table table-striped"
+                    style={{width: '100%'}}
+                >
+                  <thead>
                   <tr>
                     <th>Vehicle Type</th>
                     <th>Make & Model</th>
@@ -92,18 +95,18 @@ function Rates() {
                     <th>Hourly Rate</th>
                     <th>Additional Charges</th>
                   </tr>
-                </thead>
-                <tbody>
+                  </thead>
+                  <tbody>
                   {/* DataTables will populate this */}
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
-    </>
+        <Footer/>
+      </>
   );
 }
 

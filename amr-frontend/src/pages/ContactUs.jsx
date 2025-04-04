@@ -172,204 +172,213 @@ function ContactUs() {
   };
 
   return (
-    <>
-      <Navbar />
+      <>
+        <head>
+          <title>AMR - Contact Us</title>
+        </head>
+        <Navbar/>
 
-      {/* Weather Temperature Display */}
-      <div className="order-lg-1 navbar-nav temperature-container" style={{ position: 'absolute', top: '20px', right: '20px' }}>
-        <p id="displayResult" className="nav-item temperature-value">{temperature}</p>
-        <span>&deg;F <i
-          id="openDialog"
-          className="nav-item fas fa-solid fa-pen edit-icon"
-          onClick={() => setDialogOpen(true)}
-        ></i></span>
-        <p id="displayCity" className="temperature-value temp-city">{city}</p>
-      </div>
-
-      {/* Zip Code Dialog */}
-      {dialogOpen && (
-        <div className="dialog-overlay" style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 1000,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <div
-            ref={dialogRef}
-            className="dialog-box"
-            style={{
-              backgroundColor: 'white',
-              padding: '20px',
-              borderRadius: '5px',
-              width: '300px'
-            }}
-          >
-            <h4>Search By Zip Code</h4>
-            <input
-              type="text"
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
-              placeholder="Enter your Zip Code"
-              style={{ width: '100%', padding: '8px', marginBottom: '15px' }}
-            />
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
-              <button
-                onClick={() => setDialogOpen(false)}
-                style={{ padding: '5px 10px' }}
-              >
-                Cancel
-              </button>
-              <button
-                onClick={fetchWeatherData}
-                style={{ padding: '5px 10px' }}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
+        {/* Weather Temperature Display */}
+        <div className="order-lg-1 navbar-nav temperature-container"
+             style={{position: 'absolute', top: '20px', right: '20px'}}>
+          <p id="displayResult" className="nav-item temperature-value">{temperature}</p>
+          <span>&deg;F <i
+              id="openDialog"
+              className="nav-item fas fa-solid fa-pen edit-icon"
+              onClick={() => setDialogOpen(true)}
+          ></i></span>
+          <p id="displayCity" className="temperature-value temp-city">{city}</p>
         </div>
-      )}
 
-      <main className="contact-form" style={{ marginTop: '100px' }}>
-        <div className="container-fluid px-1 py-5 mx-auto">
-          <div className="row d-flex justify-content-center">
-            <div className="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-              <div className="card">
-                <h2 className="text-center mb-4 title legend-font-change">Say Hello!</h2>
+        {/* Zip Code Dialog */}
+        {dialogOpen && (
+            <div className="dialog-overlay" style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              zIndex: 1000,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <div
+                  ref={dialogRef}
+                  className="dialog-box"
+                  style={{
+                    backgroundColor: 'white',
+                    padding: '20px',
+                    borderRadius: '5px',
+                    width: '300px'
+                  }}
+              >
+                <h4>Search By Zip Code</h4>
+                <input
+                    type="text"
+                    value={zipCode}
+                    onChange={(e) => setZipCode(e.target.value)}
+                    placeholder="Enter your Zip Code"
+                    style={{width: '100%', padding: '8px', marginBottom: '15px'}}
+                />
+                <div style={{display: 'flex', justifyContent: 'flex-end', gap: '10px'}}>
+                  <button
+                      onClick={() => setDialogOpen(false)}
+                      style={{padding: '5px 10px'}}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                      onClick={fetchWeatherData}
+                      style={{padding: '5px 10px'}}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+        )}
 
-                {success ? (
-                  <div className="success-message text-center">
-                    <i className="fas fa-check-circle" style={{ color: 'green', fontSize: '28px' }}></i>
-                    <h3 className="mt-4">Thank You!</h3>
-                    <p>Your message has been sent successfully. We'll get back to you soon!</p>
-                  </div>
-                ) : (
-                  <form className="form-card" onSubmit={handleSubmit}>
-                    {/* Personal Info */}
-                    <fieldset>
-                      <legend className="legend-font-change">Personal Information</legend>
-                      <div className="row justify-content-between text-left">
-                        <div className="form-group col-sm-6 flex-column d-flex">
-                          <input
-                            type="text"
-                            id="fname"
-                            name="fname"
-                            value={formData.fname}
-                            onChange={handleChange}
-                            placeholder="First name"
-                            style={{ borderColor: errors.fname ? 'red' : '' }}
-                          />
-                          {errors.fname && (
-                            <div className="error-message" style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-                              {errors.fname}
-                            </div>
-                          )}
-                        </div>
-                        <div className="form-group col-sm-6 flex-column d-flex">
-                          <input
-                            type="text"
-                            id="lname"
-                            name="lname"
-                            value={formData.lname}
-                            onChange={handleChange}
-                            placeholder="Last name"
-                            style={{ borderColor: errors.lname ? 'red' : '' }}
-                          />
-                          {errors.lname && (
-                            <div className="error-message" style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-                              {errors.lname}
-                            </div>
-                          )}
-                        </div>
+        <main className="contact-form" style={{marginTop: '100px'}}>
+          <div className="container-fluid px-1 py-5 mx-auto">
+            <div className="row d-flex justify-content-center">
+              <div className="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <div className="card">
+                  <h2 className="text-center mb-4 title legend-font-change">Say Hello!</h2>
+
+                  {success ? (
+                      <div className="success-message text-center">
+                        <i className="fas fa-check-circle" style={{color: 'green', fontSize: '28px'}}></i>
+                        <h3 className="mt-4">Thank You!</h3>
+                        <p>Your message has been sent successfully. We'll get back to you soon!</p>
                       </div>
-                      <div className="row justify-content-between text-left">
-                        <div className="form-group col-sm-6 flex-column d-flex">
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            style={{ borderColor: errors.email ? 'red' : '' }}
-                          />
-                          {errors.email && (
-                            <div className="error-message" style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-                              {errors.email}
+                  ) : (
+                      <form className="form-card" onSubmit={handleSubmit}>
+                        {/* Personal Info */}
+                        <fieldset>
+                          <legend className="legend-font-change">Personal Information</legend>
+                          <div className="row justify-content-between text-left">
+                            <div className="form-group col-sm-6 flex-column d-flex">
+                              <input
+                                  type="text"
+                                  id="fname"
+                                  name="fname"
+                                  value={formData.fname}
+                                  onChange={handleChange}
+                                  placeholder="First name"
+                                  style={{borderColor: errors.fname ? 'red' : ''}}
+                              />
+                              {errors.fname && (
+                                  <div className="error-message"
+                                       style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>
+                                    {errors.fname}
+                                  </div>
+                              )}
                             </div>
-                          )}
-                        </div>
-                        <div className="form-group col-sm-6 flex-column d-flex">
-                          <input
-                            type="tel"
-                            id="mob"
-                            name="mob"
-                            value={formData.mob}
-                            onChange={handleChange}
-                            placeholder="Phone number"
-                            style={{ borderColor: errors.mob ? 'red' : '' }}
-                          />
-                          {errors.mob && (
-                            <div className="error-message" style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-                              {errors.mob}
+                            <div className="form-group col-sm-6 flex-column d-flex">
+                              <input
+                                  type="text"
+                                  id="lname"
+                                  name="lname"
+                                  value={formData.lname}
+                                  onChange={handleChange}
+                                  placeholder="Last name"
+                                  style={{borderColor: errors.lname ? 'red' : ''}}
+                              />
+                              {errors.lname && (
+                                  <div className="error-message"
+                                       style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>
+                                    {errors.lname}
+                                  </div>
+                              )}
                             </div>
-                          )}
-                        </div>
-                      </div>
-                    </fieldset>
+                          </div>
+                          <div className="row justify-content-between text-left">
+                            <div className="form-group col-sm-6 flex-column d-flex">
+                              <input
+                                  type="email"
+                                  id="email"
+                                  name="email"
+                                  value={formData.email}
+                                  onChange={handleChange}
+                                  placeholder="Email"
+                                  style={{borderColor: errors.email ? 'red' : ''}}
+                              />
+                              {errors.email && (
+                                  <div className="error-message"
+                                       style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>
+                                    {errors.email}
+                                  </div>
+                              )}
+                            </div>
+                            <div className="form-group col-sm-6 flex-column d-flex">
+                              <input
+                                  type="tel"
+                                  id="mob"
+                                  name="mob"
+                                  value={formData.mob}
+                                  onChange={handleChange}
+                                  placeholder="Phone number"
+                                  style={{borderColor: errors.mob ? 'red' : ''}}
+                              />
+                              {errors.mob && (
+                                  <div className="error-message"
+                                       style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>
+                                    {errors.mob}
+                                  </div>
+                              )}
+                            </div>
+                          </div>
+                        </fieldset>
 
-                    {/* Message */}
-                    <fieldset>
-                      <legend className="legend-font-change">Message</legend>
-                      <div className="row justify-content-between text-left">
-                        <div className="form-group col-12 flex-column d-flex">
+                        {/* Message */}
+                        <fieldset>
+                          <legend className="legend-font-change">Message</legend>
+                          <div className="row justify-content-between text-left">
+                            <div className="form-group col-12 flex-column d-flex">
                           <textarea
-                            className="form-control"
-                            id="message-textbox"
-                            name="message"
-                            rows="3"
-                            placeholder="Type your message here"
-                            value={formData.message}
-                            onChange={handleChange}
-                            style={{ borderColor: errors.message ? 'red' : '' }}
+                              className="form-control"
+                              id="message-textbox"
+                              name="message"
+                              rows="3"
+                              placeholder="Type your message here"
+                              value={formData.message}
+                              onChange={handleChange}
+                              style={{borderColor: errors.message ? 'red' : ''}}
                           ></textarea>
-                          {errors.message && (
-                            <div className="error-message" style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-                              {errors.message}
+                              {errors.message && (
+                                  <div className="error-message"
+                                       style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>
+                                    {errors.message}
+                                  </div>
+                              )}
                             </div>
-                          )}
-                        </div>
-                      </div>
-                    </fieldset>
+                          </div>
+                        </fieldset>
 
-                    {/* Submit Button */}
-                    <div className="row justify-content-center">
-                      <div className="form-group col-sm-6">
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-block proceed-btn"
-                          disabled={loading}
-                        >
-                          {loading ? 'Sending...' : 'Submit'}
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                )}
+                        {/* Submit Button */}
+                        <div className="row justify-content-center">
+                          <div className="form-group col-sm-6">
+                            <button
+                                type="submit"
+                                className="btn btn-primary btn-block proceed-btn"
+                                disabled={loading}
+                            >
+                              {loading ? 'Sending...' : 'Submit'}
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      <Footer />
-    </>
+        <Footer/>
+      </>
   );
 }
 
